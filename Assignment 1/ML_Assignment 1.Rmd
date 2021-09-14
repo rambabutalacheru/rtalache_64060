@@ -1,0 +1,50 @@
+---
+title: "Assignment_1"
+output: html_document
+---
+Importing the dataset
+
+```{r}
+
+library(readxl)
+Stcoksdata <- read_excel("C:/Users/ramne/Desktop/Stcoksdata.xlsx")
+View(Stcoksdata)
+
+```
+
+```{r}
+#Summary of dataset
+
+summary(Stcoksdata)
+
+sapply(Stcoksdata, mode)
+
+
+
+```
+
+Data Transformation
+
+```{r}
+library(tidyverse)
+
+#Arranginging rows by variable
+
+Stcoksdata_arrange1 <- Stcoksdata %>% arrange(High)
+
+view(Stcoksdata_arrange1)
+
+
+```
+
+Plotting the Visua;ization
+
+```{r}
+
+
+attach(Stcoksdata_arrange1)
+plot(High, Open, main="Scatterplot", xlab="High", ylab="Stock open rate")
+plot(Stcoksdata_arrange1)
+
+```
+
